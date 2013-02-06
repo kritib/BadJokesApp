@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :jokes
 
+  has_many :votes
+
   has_many :fan_relationships, :class_name => "Relationship",
            :foreign_key => :hero_id
   has_many :fans, :through => :fan_relationships

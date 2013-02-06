@@ -9,5 +9,6 @@ class Vote < ActiveRecord::Base
   validates :score, :inclusion => { :in => [1, -1] },
             :presence => true
   validates :joke_id, :presence => true
+
 end
 

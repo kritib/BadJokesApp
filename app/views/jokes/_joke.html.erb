@@ -1,1 +1,11 @@
-<%= joke.body %></br>
+<h4><%= joke.body %> Score: <%= joke.score %></h4>
+<%= form_tag("/votes/", :method => "post") do %>
+  <%= hidden_field_tag(:joke_id, joke.id) %>
+  <%= hidden_field_tag(:score, 1) %>
+  <%= submit_tag("+") %>
+<% end %>
+<%= form_tag("/votes/", :method => "post") do %>
+  <%= hidden_field_tag(:joke_id, joke.id) %>
+  <%= hidden_field_tag(:score, -1) %>
+  <%= submit_tag("-") %>
+<% end %>
